@@ -26,6 +26,9 @@ const Ajuda = () => {
       <p>
         Rodar: node node_modules\minhas-series-server\index.js
       </p>
+      <p>
+        API: http://localhost:3002/api/series/3
+      </p>
     </div>
   );
 };
