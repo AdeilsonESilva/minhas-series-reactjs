@@ -7,7 +7,8 @@ const Series = () => {
   useEffect(() => {
     axios
       .get('/api/series')
-      .then(res => setData(res.data.data));
+      .then(res => setData(res.data.data))
+      .catch(error => console.log('error on get seeries: ', error));
   }, []);
 
   const deleteSerie = id => {
@@ -34,7 +35,7 @@ const Series = () => {
     );
   };
 
-  if (data.length === 0) {
+  if (!data || data.length === 0) {
     return (
       <div className='container'>
         <h1>Séries</h1>
