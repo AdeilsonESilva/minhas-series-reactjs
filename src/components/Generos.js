@@ -7,7 +7,8 @@ const Generos = () => {
   useEffect(() => {
     axios
       .get('/api/genres')
-      .then(res => setData(res.data.data));
+      .then(res => setData(res.data.data))
+      .catch(error => console.log('error on get genres: ', error));
   }, []);
 
   const deleteGenero = id => {
@@ -34,7 +35,7 @@ const Generos = () => {
     );
   };
 
-  if (data.length === 0) {
+  if (!data || data.length === 0) {
     return (
       <div className='container'>
         <h1>Gêneros</h1>

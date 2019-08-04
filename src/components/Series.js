@@ -8,7 +8,7 @@ const Series = () => {
     axios
       .get('/api/series')
       .then(res => setData(res.data.data))
-      .catch(error => console.log('error on get seeries: ', error));
+      .catch(error => console.log('error on get series: ', error));
   }, []);
 
   const deleteSerie = id => {
@@ -29,7 +29,7 @@ const Series = () => {
         <td>{record.name}</td>
         <td>
           <button className='btn btn-danger' onClick={() => deleteSerie(record.id)}>Remover</button>
-          <Link to={'/series/' + record.id} className='btn btn-warning'>Editar</Link>
+          <Link to={'/series/' + record.id} className='btn btn-warning'>Info</Link>
         </td>
       </tr>
     );
